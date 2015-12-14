@@ -1,0 +1,14 @@
+#!/bin/sh
+for dir in apps data images themes ; do
+  [ -d "/data/$dir" ] || mkdir -v "/data/$dir"
+done
+for theme in $(ls /themes) ; do
+  [ -d "/data/themes/$theme" ] || mv -v "/themes/$theme" /data/themes/
+done
+[ -e /data/themes/casper ] || \
+  cp -vr /ghost/content/themes/casper /data/themes/
+
+chown -R nobody /data
+
+cd /ghost
+exec gosu nobody npm start --production

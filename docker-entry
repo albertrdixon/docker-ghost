@@ -1,0 +1,4 @@
+#!/bin/sh
+t2 /templates
+rm -rf /templates
+exec $*
