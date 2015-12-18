@@ -3,9 +3,9 @@ var path = require('path'),
 
 config = {
     production: {
-        url: 'http://{{ .Env.EXTERNAL_URL }}',
+        url: '{{ .Env.EXTERNAL_URL }}',
     {{ if has_key .Env "EXTERNAL_TLS_URL" }}
-        urlSSL: 'https://{{ .Env.EXTERNAL_TLS_URL }}',{{ end }}
+        urlSSL: '{{ .Env.EXTERNAL_TLS_URL }}',{{ end }}
     {{ if or (eql .Env.FORCE_ADMIN_SSL "true") (eql .Env.FORCE_ADMIN_SSL "yes") }}
         forceAdminSSL: true,{{ end }}
         mail: {
