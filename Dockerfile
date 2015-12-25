@@ -63,6 +63,10 @@ RUN git clone --depth=1 https://github.com/DanielTamkin/placidity.git /themes/pl
 RUN git clone --depth=1 https://github.com/curiositry/mnml-ghost-theme.git /themes/mnml
 # hoist
 RUN git clone --depth=1 https://github.com/EliotSlevin/hoist-ghost.git /themes/hoist
+# pixeltraveller
+RUN git clone --depth=1 https://github.com/Skepton/Pixeltraveller.git /themes/pixeltraveller
+# portfolio
+RUN git clone --depth=1 https://github.com/GavickPro/Portfolio-Free-Ghost-Theme.git /themes/portfolio
 
 ADD *.tmpl /templates/
 ADD docker-* /usr/local/bin/
